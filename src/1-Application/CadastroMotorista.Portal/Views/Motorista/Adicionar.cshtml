@@ -1,0 +1,71 @@
+﻿@model CadastroMotorista.Domain.Dtos.MotoristaDto
+@{
+    ViewData["Title"] = "Adicionar";
+}
+
+<div class="container">
+    <div class="titulo">
+        <span id="icon">Cadastro de Motorista </span>
+        <div class="clearfix"></div>
+    </div>
+    <br />
+    <div class="forms">
+        <form action="/Motorista/Adiciona" id="formMotorista" method="post">        
+            @Html.AntiForgeryToken()
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="Nome" class="form-control" maxlength="100" required />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="CPF" class="cpf form-control" maxlength="18" required />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="idade">Idade:</label>
+                    <input type="text" id="idade" name="Idade" class="form-control" maxlength="3" required />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Sexo:</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="sexo" value="F" name="Sexo" class="form-check-input" />
+                        <label for="sexo" class="form-check-label">Feminino </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="sexo" value="M" name="Sexo" class="form-check-input" />
+                        <label for="sexo" class="form-check-label">Masculino </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="sexo" value="O" name="Sexo" class="form-check-input" />
+                        <label for="sexo" class="form-check-label">Outro </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <input type="hidden" id="active" name="Ativo" value="false" />
+                    <div class="form-check mb-2">
+                        <input type="checkbox" id="ativo" value="false" onclick="VerificarCheckBox()" class="form-check-input" />
+                        <label for="ativo" class="form-check-label">Ativo </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 offset-md-3">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="reset" class="btn btn-success">Limpar</button>
+                <a href="/Motorista/Index" class="btn btn-secondary">Voltar</a>
+            </div>
+        </form>
+    </div>    
+</div>
+

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Jarvis.Utils" Version="2.0.3.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="toastr" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\2-Domain\CadastroMotorista.Domain\CadastroMotorista.Domain.csproj" />
+    <ProjectReference Include="..\..\3-Service\CadastroMotorista.Service\CadastroMotorista.Service.csproj" />
+    <ProjectReference Include="..\..\4-Infra\4.2-CrossCutting\CadastroMotorista.Infra.CrossCutting\CadastroMotorista.Infra.CrossCutting.csproj" />
+  </ItemGroup>
+
+</Project>

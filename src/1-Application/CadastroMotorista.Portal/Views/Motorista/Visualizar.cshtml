@@ -1,0 +1,49 @@
+﻿@model CadastroMotorista.Domain.Dtos.MotoristaDto
+
+@{
+    ViewData["Title"] = "Visualizar";
+}
+
+<div class="container">
+    <a href="/Motorista/Index" class="btn btn-default offset-11" title="Voltar">
+        <span>Voltar</span>
+    </a>
+    <div class="painel">
+        <div class="p_titulo">
+            <span>Dados do Motorista</span>
+        </div>
+        <div class="p_corpo">
+            <div class="table-responsive-md">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td style="text-align:right; width:30%;"><strong>Código Motorista </strong></td>
+                            <td>@Model.Codigo</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right; width:30%;"><strong>Nome </strong></td>
+                            <td>@Model.Nome</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right; width:30%;"><strong>CPF </strong></td>
+                            <td>@Model.CPF</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right; width:30%;"><strong>Sexo </strong></td>
+                            <td>@Model.Sexo</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right; width:30%;"><strong>Idade </strong></td>
+                            <td>@Model.Idade</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right; width:30%;"><strong>Ativo </strong></td>
+                            <td>@(Model.Ativo == true ? "Sim" : "Não")</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

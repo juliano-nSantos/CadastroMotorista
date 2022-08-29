@@ -1,0 +1,83 @@
+﻿@model CadastroMotorista.Portal.Models.RetornoBuscaViewModel
+@using Jarvis.Utils.Utilities;
+
+<div class="table-responsive-sm table-responsive-md">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Codigo</th>
+                <th>CPF </th>
+                <th>Nome </th>
+                <th>Sexo </th>
+                <th>Idade </th>
+                <th>Ativo </th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.ListMotoristas != null && Model.ListMotoristas.Any())
+            {
+                @foreach (var i in Model.ListMotoristas)
+                {
+                    <tr>
+                        <td>@i.Codigo</td>
+                        <td>@i.CPF</td>
+                        <td>@i.Nome</td>
+                        <td>@i.Sexo</td>
+                        <td>@i.Idade</td>
+                        <td>@(i.Ativo == true ? "Sim" : "Não")</td>
+                        <td>
+
+                            <a href="/Motorista/Visualizar/@JarvisEncrypt.EncrypId(i.Codigo)" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="Visualizar Motorista"><i class="fas fa-eye"></i></a>
+                            <a href="/Motorista/Editar/@JarvisEncrypt.EncrypId(i.Codigo)" class="btn btn-sm btn-secondary" data-toggle="tooltip" data-placement="top" title="Editar Motorista"><i class="fas fa-edit"></i></a>
+                            <a href="#modal-excluir" class="btn btn-sm btn-danger" motorista="@i.Codigo" data-toggle="modal" data-placement="top" title="Excluir Motorista">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="7" style="text-align:center">Nenhum motorista encontrado!</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!--Inicio Modal-excluir-->
+<div id="modal-excluir" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="/Motorista/Deletar" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title">Excluir Motorista</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" class="id" id="Id" name="Id" value="" />
+                    <h5 style="text-align:center;">Deseja realmente excluir este motorista?</h5>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+                    <button class="btn btn-danger">Excluir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--Fim Modal-Excluir-->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on('click', 'a', function (event) {
+            var produto = $(this).attr('motorista');            
+
+            $('.id').val(produto);            
+        });
+    });
+</script>

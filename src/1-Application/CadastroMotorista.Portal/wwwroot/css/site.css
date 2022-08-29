@@ -1,0 +1,181 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    min-height: 40rem;
+    padding-top: 4.5rem;
+    background-color: #F8F8FF;
+}
+
+.btn-default {
+    color: #333;
+    background-color: #D3D3D3;
+    border-color: #ccc;
+}
+
+/*.dropdown {
+    display: inline-block;
+}*/
+
+.line-space-sm {
+    height: 5px;
+}
+
+.show{
+    display: block !important;
+}
+
+input.drop.input-sm, div.input-sm.drop {
+    width: 100% !important;
+}
+
+.btn-circle{
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 25px !important;
+}
+
+.input-sm{
+    height:30px;
+    padding: 5px 10px;
+    border-radius:3px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    margin-top: 4px;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #D3D3D3;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.panel-default {
+    border-color: #ddd;
+}
+
+.panel-body{
+    padding: 15px;
+}
+
+#check{
+    margin-left: 2px;
+}
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+ Provide sufficient contrast against white background 
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/*body {*/
+  /* Margin bottom by footer height */
+  /*margin-bottom: 60px;
+}*/
+.footer {
+  position: absolute;  
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;  Vertically center the text there 
+}
+
+.forms .form-row{
+    /*justify-content:center;*/
+   /* max-width:60%;
+    max-height:80%;*/
+}
+
+#formMotorista {
+    margin-bottom: 20px;
+    padding: 5px 5px 10px;
+    background-color: #D3D3D3;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    border-color: #DDD;
+    /*position: absolute;*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /*padding: 12px 16px;
+    z-index: 1;
+    margin-top: 4px;*/
+}
+
+
+.painel{
+    margin-bottom: 20px;
+    margin-top:5px;
+    padding: 5px 5px 10px;
+    background-color: #D3D3D3;
+    border: 1px solid transparent;
+    border-radius:4px;
+    border-color: #DDD;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.p_titulo{
+    border-bottom: 2px solid #E6E9ED;
+    padding: 1px 5px 6px;
+    margin-bottom:10px;
+    font-size:17px;
+    background-color: #fff;
+}
+
+.p_corpo tr {
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}

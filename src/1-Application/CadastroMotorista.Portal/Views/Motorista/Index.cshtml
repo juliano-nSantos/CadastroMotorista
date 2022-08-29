@@ -1,0 +1,116 @@
+﻿@model CadastroMotorista.Domain.Models.FiltroBusca
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <form action="" method="post" id="filtro">        
+        <div class="dropdown show" id="filterIn">
+            <button class="btn btn-default " type="button" id="Filtrar" title="Filtrar">
+                <span class="fas fa-filter"></span> Motoristas
+            </button>
+            <div class="dropdown-content panel panel-default show" id="filter">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <label for="cpf">CPF:</label>
+                                    <input type="text" id="cpf" name="CPF" class="cpf input-group-sm" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="nome">Nome:</label>
+                                    <input type="text" id="nome" name="Nome" class="input-group-sm" maxlength="100" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label for="idadeInicial">Idade Inicial:</label>
+                                    <input type="text" id="idadeInicial" name="IdadeInicial" class="input-group-sm" maxlength="3" style="width:100%;" />
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="idadeFinal">Idade Final:</label>
+                                    <input type="text" id="idadeFinal" name="IdadeFinal" class="input-group-sm" maxlength="3" style="width:100%;" />
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="ativo">Status: </label>
+                                    <select name="Ativo" class="input-group-sm">
+                                        <option value="">Selecione</option>
+                                        <option value="true">Ativo</option>
+                                        <option value="false">Inativo</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="sexo">Sexo: </label>
+                                    <select name="Sexo">
+                                        <option value="">Selecione</option>
+                                        <option value="F">Feminino</option>
+                                        <option value="M">Masculino</option>
+                                        <option value="O">Outro</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-sm-6 offset-sm-6">
+                                    <button class="btn btn-lg btn-primary button btn-circle" id="btnPesquisar" type="button" title="Pesquisar">
+                                        <span class="fas fa-search"></span>
+                                    </button>
+                                    <button class="btn btn-lg btn-danger btn-circle" id="btnModalLimpar" type="reset" title="Limpar">
+                                        <span class="fas fa-redo-alt"></span>
+                                    </button>
+                                    <a href="/Motorista/Adicionar" class="btn btn-lg btn-secondary btn-circle" title="Adicionar">
+                                        <span class="fas fa-plus"></span>
+                                    </a>                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="col-md-12 line-space-sm"></div>
+    <div id="result" style="background-color: white; display:none;">
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#Filtrar").click(function () {
+            var panel = document.getElementById('filter');
+
+            if (panel.classList.contains("show")) {
+                $("#filter").removeClass('show');
+            }
+            else {
+                $("#filter").addClass('show');
+            }
+        });
+
+        $("#btnPesquisar").click(function () {
+            var form = document.getElementById("filtro");
+            var dados = $(form).serialize();
+
+            $.ajax({
+                type: "POST",
+                url: '/Motorista/Index',
+                data: dados,
+                success: function (response) {
+                    // Populate your container
+                    $("#result").css("display", "");
+                    $("#filter").removeClass('show');
+
+                    $("#result").html(response);
+                }
+            });
+        });        
+    });
+
+</script>
+
+
