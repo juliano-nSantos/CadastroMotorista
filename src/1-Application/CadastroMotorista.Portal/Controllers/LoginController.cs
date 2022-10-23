@@ -1,4 +1,5 @@
 ﻿using CadastroMotorista.Domain.Dtos;
+using CadastroMotorista.Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -38,11 +39,22 @@ namespace CadastroMotorista.Portal.Controllers
             try
             {
                 user = await _serviceLogin.ValidarLogin(login);
-            }
-            catch (Exception)
-            {
 
-                throw;
+                if (user.Exists)
+                {
+                    Logar(user);
+                    return RedirectToAction("Index", "Motorista");
+                }
+                else
+                {
+                    TempData["error"] = "Usuário e / ou Senha inválido(s)";
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = ex.Message.Split("!")[0];
+                return RedirectToAction("Index", login.Email);
             }
         }
 

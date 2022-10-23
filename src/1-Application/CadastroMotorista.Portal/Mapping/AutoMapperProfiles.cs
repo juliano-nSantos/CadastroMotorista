@@ -10,6 +10,8 @@ namespace CadastroMotorista.Portal.Mapping
         {
             CreateMap<Motorista, MotoristaDto>()
                 .ReverseMap();
+            CreateMap<Usuario, UsuarioDto>()
+                .ReverseMap();
         }
     }
 }
