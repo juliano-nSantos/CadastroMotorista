@@ -15,6 +15,5 @@ namespace CadastroMotorista.Domain.Dtos
         public string Senha { get; set; }
         public DateTime DataCadastro { get; set; }
         public string Permissao { get; set; }
-        public bool Exists { get; set; }
     }
 }
