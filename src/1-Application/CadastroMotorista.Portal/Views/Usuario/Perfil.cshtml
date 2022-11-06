@@ -1,0 +1,49 @@
+﻿@model CadastroMotorista.Domain.Dtos.UsuarioDto
+
+@{
+    ViewData["Title"] = "Perfil";
+}
+
+<div class="container">
+    <a href="/Motorista/Index" class="btn btn-default offset-11" title="Voltar">
+        <span>Voltar</span>
+    </a>
+    <div class="painel">
+        <div class="p_titulo">
+            <span>Dados do Usuário</span>
+        </div>
+        <div class="p_corpo">
+            <div class="table-responsive-md">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td style="text-align:right; width:30%;"><strong>Código Usuario </strong></td>
+                            <td>@Model.IdUsuario</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right; width:30%;"><strong>Nome </strong></td>
+                            <td>@Model.Nome</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right; width:30%;"><strong>CPF </strong></td>
+                            <td>@Model.CPF</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right; width:30%;"><strong>Email </strong></td>
+                            <td>@Model.Email</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right; width:30%;"><strong>Data Cadastro </strong></td>
+                            <td>@Model.DataCadastro</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right; width:30%;"><strong>Nivel Permissão </strong></td>
+                            <td>@Model.Permissao</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -15,6 +15,7 @@ namespace CadastroMotorista.Infra.CrossCutting.InversionOfControl
             services.AddTransient<IWriteLogCollections, WriteLogCollections>();
             services.AddScoped<IService<MotoristaDto>, MotoristaService>();
             services.AddScoped<IServiceLogin, ServiceLogin>();
+            services.AddScoped<IServiceUsuario, ServiceUsuario>();
         }
     }
 }

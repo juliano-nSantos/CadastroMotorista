@@ -12,6 +12,7 @@ namespace CadastroMotorista.Infra.CrossCutting.InversionOfControl
             services.AddScoped<IExampleRepository, ExampleRepository>();
             services.AddScoped<IRepository<Motorista>, MotoristaRepository>();
             services.AddScoped<IRepositoryLogin, RepositoryLogin>();
+            services.AddScoped<IRepositoryUsuario, RepositoryUsuario>();
         }
     }
 }
